@@ -4,23 +4,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>我是一篇学习 | 不停</title>
+    <title>github命令提示 | 不停</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="树妖小姐">
     
 
     
-    <meta name="description" content="我是学习测试。">
+    <meta name="description" content="假设你github的用户名为username，那么创建一个名为username.github.com的代码库（repository）,在这个库中上传html、CSS等静态页面文件，可以用地址 http://username.github.com来访问页面了，这个页面就是你账户的主页面（User pages）。
+如果你又创建了个叫repo的代码库，在它下面的gh-pages分支里上传了html、CS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我是一篇学习">
+<meta property="og:title" content="github命令提示">
 <meta property="og:url" content="http://ShuYaoXiaoJie.github.io/2016/07/28/我是一篇学习/index.html">
 <meta property="og:site_name" content="不停">
-<meta property="og:description" content="我是学习测试。">
-<meta property="og:updated_time" content="2016-07-28T05:24:45.214Z">
+<meta property="og:description" content="假设你github的用户名为username，那么创建一个名为username.github.com的代码库（repository）,在这个库中上传html、CSS等静态页面文件，可以用地址 http://username.github.com来访问页面了，这个页面就是你账户的主页面（User pages）。
+如果你又创建了个叫repo的代码库，在它下面的gh-pages分支里上传了html、CS">
+<meta property="og:updated_time" content="2016-07-29T13:41:50.725Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我是一篇学习">
-<meta name="twitter:description" content="我是学习测试。">
+<meta name="twitter:title" content="github命令提示">
+<meta name="twitter:description" content="假设你github的用户名为username，那么创建一个名为username.github.com的代码库（repository）,在这个库中上传html、CSS等静态页面文件，可以用地址 http://username.github.com来访问页面了，这个页面就是你账户的主页面（User pages）。
+如果你又创建了个叫repo的代码库，在它下面的gh-pages分支里上传了html、CS">
 
     
     <link rel="alternative" href="/atom.xml" title="不停" type="application/atom+xml">
@@ -81,7 +84,7 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/07/28/我是一篇学习/" title="我是一篇学习" itemprop="url">我是一篇学习</a>
+      <a href="/2016/07/28/我是一篇学习/" title="github命令提示" itemprop="url">github命令提示</a>
   </h1>
   <p class="article-author">By
        
@@ -101,7 +104,26 @@
 		
 		</div>
 		
-		<p>我是学习测试。</p>
+		<pre><code>假设你github的用户名为username，那么创建一个名为username.github.com的代码库（repository）,在这个库中上传html、CSS等静态页面文件，可以用地址 http://username.github.com来访问页面了，这个页面就是你账户的主页面（User pages）。
+如果你又创建了个叫repo的代码库，在它下面的gh-pages分支里上传了html、CSS等静态页面文件，那么用http://username.github.com/repo这个地址就能访问页面了。
+要想生成复杂点的页面，可以用jekyll，语法高亮用pygments 。
+要想域名绑定，在代码库的根目录下放一个CNAME文件就行了，文件里写上想要绑定的域名，然后在域名DNS管理的后台网站建立指向就行。如果想把页面绑定到二级域名，需要创建一个CNAME指向。如果要把页面绑定到顶级域名，需要创建一个A指向。不能用CNAME指向顶级域名，否则会造成冲突。
+</code></pre><p>主要命令提示；<br>2.0以上版本会提示警告，让你使用git add -A代替git add</p>
+<p>本地项目上传github的命令提示：</p>
+<p>首先要在GitHub上创建一个帐号，由于本地Git仓库和GitHub仓库之间的传输是通过SSH加密的，所以要在本地生成一个私钥和一个密钥命令，后面跟的邮箱，要跟你自己的</p>
+<p>$ ssh-keygen -t rsa -C “deng0123@aliyun.com”</p>
+<p>C:\Users\lenovo.ssh下有id_rsa.pub密钥</p>
+<p>打开id_rsa.pub文件，复制里面的内容粘贴到GitHub指定的位置，可以添加一个公钥。</p>
+<p>接下来是创建一个仓库</p>
+<p>在本地项目所在目录按以下步骤操作</p>
+<p>git init<br>git add README.md<br>git commit -m “first commit”<br>git remote add origin <a href="https://github.com/ShuYaoXiaoJie/ShuYaoXiaoJie.github.io" target="_blank" rel="external">https://github.com/ShuYaoXiaoJie/ShuYaoXiaoJie.github.io</a>  //仓库的地址<br>git push -u origin master</p>
+<p>或者：1、先输入$ git remote rm origin</p>
+<p>2、再输入$ git remote add origin git@github.com:dengzhaotai/vlc_play.git 就不会报错了！</p>
+<p>最后上传： git push -u origin master</p>
+<p>如果上传出现问题：</p>
+<p>先执行git pull</p>
+<p>然后再执行 git push –force origin master 替换原先的git push -u origin master</p>
+<p>附上操作文档：<a href="https://help.github.com/" target="_blank" rel="external">https://help.github.com/</a></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -119,7 +141,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://ShuYaoXiaoJie.github.io/2016/07/28/我是一篇学习/" data-title="我是一篇学习 | 不停" data-tsina="3737921764" class="share clearfix">
+	  <div data-url="http://ShuYaoXiaoJie.github.io/2016/07/28/我是一篇学习/" data-title="github命令提示 | 不停" data-tsina="3737921764" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -153,7 +175,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/07/28/我是一篇学习/" data-title="我是一篇学习" data-url="http://ShuYaoXiaoJie.github.io/2016/07/28/我是一篇学习/"></div>
+	<div class="ds-thread" data-thread-key="2016/07/28/我是一篇学习/" data-title="github命令提示" data-url="http://ShuYaoXiaoJie.github.io/2016/07/28/我是一篇学习/"></div>
 </section>
 
 
@@ -213,11 +235,11 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/总结/" title="总结,">总结,<sup>1</sup></a></li>
+				<li><a href="/tags/电影/" title="电影">电影<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/电影/" title="电影">电影<sup>1</sup></a></li>
+				<li><a href="/tags/总结/" title="总结,">总结,<sup>1</sup></a></li>
 			
 		
 			
