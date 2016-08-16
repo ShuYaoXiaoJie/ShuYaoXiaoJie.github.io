@@ -4,23 +4,29 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>我是一篇随想 | 不停</title>
+    <title>shopMFY1-2数据库表的建立 | 不停</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="树妖小姐">
     
 
-    
-    <meta name="description" content="我是随想测试。">
+    <meta name="keywords" content="数据库表">
+    <meta name="description" content="命令行建立数据库表：1、连接数据库：mysql -uroot -proot
+2、检测：set names gbk;
+3、复制数据库建立的代码：DROP DATABASE shopMFY;CREATE DATABASE IF NOT EXISTS shopMFY;USE shopMFY;– 管理员表 –DROP TABLE IF EXISTS MFY_admin;CREATE TABLE MFY_a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我是一篇随想">
-<meta property="og:url" content="http://ShuYaoXiaoJie.github.io/2016/07/28/我是一篇随想/index.html">
+<meta property="og:title" content="shopMFY1-2数据库表的建立">
+<meta property="og:url" content="http://ShuYaoXiaoJie.github.io/2016/08/16/shopMFY1-2数据库表的建立/index.html">
 <meta property="og:site_name" content="不停">
-<meta property="og:description" content="我是随想测试。">
-<meta property="og:updated_time" content="2016-07-28T05:24:25.324Z">
+<meta property="og:description" content="命令行建立数据库表：1、连接数据库：mysql -uroot -proot
+2、检测：set names gbk;
+3、复制数据库建立的代码：DROP DATABASE shopMFY;CREATE DATABASE IF NOT EXISTS shopMFY;USE shopMFY;– 管理员表 –DROP TABLE IF EXISTS MFY_admin;CREATE TABLE MFY_a">
+<meta property="og:updated_time" content="2016-08-16T13:43:18.200Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我是一篇随想">
-<meta name="twitter:description" content="我是随想测试。">
+<meta name="twitter:title" content="shopMFY1-2数据库表的建立">
+<meta name="twitter:description" content="命令行建立数据库表：1、连接数据库：mysql -uroot -proot
+2、检测：set names gbk;
+3、复制数据库建立的代码：DROP DATABASE shopMFY;CREATE DATABASE IF NOT EXISTS shopMFY;USE shopMFY;– 管理员表 –DROP TABLE IF EXISTS MFY_admin;CREATE TABLE MFY_a">
 
     
     <link rel="alternative" href="/atom.xml" title="不停" type="application/atom+xml">
@@ -81,14 +87,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/07/28/我是一篇随想/" title="我是一篇随想" itemprop="url">我是一篇随想</a>
+      <a href="/2016/08/16/shopMFY1-2数据库表的建立/" title="shopMFY1-2数据库表的建立" itemprop="url">shopMFY1-2数据库表的建立</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="树妖小姐" target="_blank" itemprop="author">树妖小姐</a>
 		
   <p class="article-time">
-    <time datetime="2016-07-28T03:56:38.000Z" itemprop="datePublished"> 发表于 2016-07-28</time>
+    <time datetime="2016-08-16T13:35:10.000Z" itemprop="datePublished"> 发表于 2016-08-16</time>
     
   </p>
 </header>
@@ -97,11 +103,30 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#命令行建立数据库表："><span class="toc-number">1.</span> <span class="toc-text">命令行建立数据库表：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、连接数据库："><span class="toc-number">1.1.</span> <span class="toc-text">1、连接数据库：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、检测："><span class="toc-number">1.2.</span> <span class="toc-text">2、检测：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、复制数据库建立的代码："><span class="toc-number">1.3.</span> <span class="toc-text">3、复制数据库建立的代码：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、查看表："><span class="toc-number">1.4.</span> <span class="toc-text">4、查看表：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、注意："><span class="toc-number">1.5.</span> <span class="toc-text">5、注意：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6、在shopMFY的文件夹下建立测试用户test-php，在本地localhost进行查看（可使用WampServer）"><span class="toc-number">1.6.</span> <span class="toc-text">6、在shopMFY的文件夹下建立测试用户test.php，在本地localhost进行查看（可使用WampServer）,</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7、在浏览器中复制Insert及后的内容，粘贴进cmd命令行中。"><span class="toc-number">1.7.</span> <span class="toc-text">7、在浏览器中复制Insert及后的内容，粘贴进cmd命令行中。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8、在命令行输入-select-from-MFY-admin-进行查询。"><span class="toc-number">1.8.</span> <span class="toc-text">8、在命令行输入 select * from MFY_admin;进行查询。</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<p>我是随想测试。</p>
+		<h1 id="命令行建立数据库表："><a href="#命令行建立数据库表：" class="headerlink" title="命令行建立数据库表："></a>命令行建立数据库表：</h1><h2 id="1、连接数据库："><a href="#1、连接数据库：" class="headerlink" title="1、连接数据库："></a>1、连接数据库：</h2><pre><code>mysql -uroot -proot
+</code></pre><h2 id="2、检测："><a href="#2、检测：" class="headerlink" title="2、检测："></a>2、检测：</h2><pre><code>set names gbk;
+</code></pre><h2 id="3、复制数据库建立的代码："><a href="#3、复制数据库建立的代码：" class="headerlink" title="3、复制数据库建立的代码："></a>3、复制数据库建立的代码：</h2><p>DROP DATABASE <code>shopMFY</code>;<br>CREATE DATABASE IF NOT EXISTS <code>shopMFY</code>;<br>USE <code>shopMFY</code>;<br>– 管理员表 –<br>DROP TABLE IF EXISTS <code>MFY_admin</code>;<br>CREATE TABLE <code>MFY_admin</code>(<br>id tinyint unsigned auto_increment key,<br>userName varchar(20) not null unique,<br>passWord char(32) not null,<br>email varchar(50) not null<br>)ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;</p>
+<p>– 分类表  –<br>DROP TABLE IF EXISTS <code>MFY_cate</code>;<br>CREATE TABLE <code>MFY_cate</code>(<br><code>id</code> smallint(5) unsigned auto_increment key,<br><code>cName</code> varchar(50) unique<br>)ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;</p>
+<p>– 商品表 –<br>DROP TABLE IF EXISTS <code>MFY_pro</code>;<br>CREATE TABLE <code>MFY_pro</code>(<br><code>id</code> int unsigned auto_increment key,<br><code>pName</code> varchar(50) not null unique,<br><code>pSn</code> varchar(50) not null,<br><code>pNum</code> int unsigned default 1,<br><code>mPrice</code> decimal(10,2) not null,<br><code>iPrice</code> decimal(10,2) not null,<br><code>pDesc</code> text,<br><code>pImg</code> varchar(50) not null,<br><code>pubTime</code> int unsigned not null,<br><code>isShow</code> tinyint(1) default 1,<br><code>isHot</code>tinyint(1) default 0,<br><code>cId</code> smallint unsigned not null<br>)ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;</p>
+<p>– 用户表 –<br>DROP TABLE IF EXISTS <code>MFY_user</code>;<br>CREATE TABLE <code>MFY_user</code>(<br><code>id</code> int unsigned auto_increment key,<br><code>usename</code> varchar(20) not null unique,<br><code>password</code> char(32) not null,<br><code>sex</code> enum(“保密”,”男”,”女”) not null ,<br><code>face</code> varchar(50) not null ,<br><code>regTime</code> int unsigned not null<br>)ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;</p>
+<p>– 相册表 –<br>DROP TABLE IF EXISTS <code>MFY_album</code>;<br>CREATE TABLE<code>MFY_album</code>(<br><code>id</code> int unsigned auto_increment key,<br><code>pid</code> int unsigned not null,<br><code>albumPath</code> varchar(50) not null<br>)ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;</p>
+<pre><code>每一行命令均出现“Query OK, 1 row affected (0.00 sec)”即算成功。
+</code></pre><h2 id="4、查看表："><a href="#4、查看表：" class="headerlink" title="4、查看表："></a>4、查看表：</h2><pre><code>show tables;
+
+出现：
+</code></pre><p>mysql&gt; show tables;<br>+——————-+<br>| Tables_in_shopmfy |<br>+——————-+<br>| mfy_admin         |<br>| mfy_album         |<br>| mfy_cate          |<br>| mfy_pro           |<br>| mfy_user          |<br>+——————-+<br>5 rows in set (0.00 sec)</p>
+<h2 id="5、注意："><a href="#5、注意：" class="headerlink" title="5、注意："></a>5、注意：</h2><p>第一：表名和字段名用反引号，而不是单引号</p>
+<p>第二：注释表的时候–和文字之间至少空出一个空格</p>
+<h2 id="6、在shopMFY的文件夹下建立测试用户test-php，在本地localhost进行查看（可使用WampServer）"><a href="#6、在shopMFY的文件夹下建立测试用户test-php，在本地localhost进行查看（可使用WampServer）" class="headerlink" title="6、在shopMFY的文件夹下建立测试用户test.php，在本地localhost进行查看（可使用WampServer）,"></a>6、在shopMFY的文件夹下建立测试用户test.php，在本地localhost进行查看（可使用WampServer）,</h2><pre><code>注意，要删除本地文件夹内的index.php文件，不然会显示空白。
+test.php的内容：
+&lt;?php
+echo md5(&quot;Queen&quot;);
+</code></pre><p>$sql = “insert MFY_admin(username,password,email)values(‘Queen’,’b2086154f101464aab3328ba7e060deb’,’419626329@qq.com’)”;<br>echo $sql;</p>
+<h2 id="7、在浏览器中复制Insert及后的内容，粘贴进cmd命令行中。"><a href="#7、在浏览器中复制Insert及后的内容，粘贴进cmd命令行中。" class="headerlink" title="7、在浏览器中复制Insert及后的内容，粘贴进cmd命令行中。"></a>7、在浏览器中复制Insert及后的内容，粘贴进cmd命令行中。</h2><h2 id="8、在命令行输入-select-from-MFY-admin-进行查询。"><a href="#8、在命令行输入-select-from-MFY-admin-进行查询。" class="headerlink" title="8、在命令行输入 select * from MFY_admin;进行查询。"></a>8、在命令行输入 select * from MFY_admin;进行查询。</h2><p>+—-+———-+———————————-+——————+<br>| id | userName | passWord                         | email            |<br>+—-+———-+———————————-+——————+<br>|  7 | Queen    | b2086154f101464aab3328ba7e060deb | 419626329@qq.com |<br>+—-+———-+———————————-+——————+<br>1 row in set (0.00 sec)</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -109,9 +134,14 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/随想/">随想</a>
+  <a class="article-category-link" href="/categories/学习/">学习</a>
 </div>
 
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/shopMFY/">shopMFY</a>
+  </div>
 
 </div>
 
@@ -119,7 +149,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://ShuYaoXiaoJie.github.io/2016/07/28/我是一篇随想/" data-title="我是一篇随想 | 不停" data-tsina="3737921764" class="share clearfix">
+	  <div data-url="http://ShuYaoXiaoJie.github.io/2016/08/16/shopMFY1-2数据库表的建立/" data-title="shopMFY1-2数据库表的建立 | 不停" data-tsina="3737921764" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -132,19 +162,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/07/28/我是一篇写作/" title="萤火之森">
-  <strong>上一篇：</strong><br/>
-  <span>
-  萤火之森</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/07/28/The-First/"  title="The First">
+<a href="/2016/08/13/zend-studio常用快捷键/"  title="zend studio常用快捷键">
  <strong>下一篇：</strong><br/> 
- <span>The First
+ <span>zend studio常用快捷键
 </span>
 </a>
 </div>
@@ -153,7 +175,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/07/28/我是一篇随想/" data-title="我是一篇随想" data-url="http://ShuYaoXiaoJie.github.io/2016/07/28/我是一篇随想/"></div>
+	<div class="ds-thread" data-thread-key="2016/08/16/shopMFY1-2数据库表的建立/" data-title="shopMFY1-2数据库表的建立" data-url="http://ShuYaoXiaoJie.github.io/2016/08/16/shopMFY1-2数据库表的建立/"></div>
 </section>
 
 
@@ -163,7 +185,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#命令行建立数据库表："><span class="toc-number">1.</span> <span class="toc-text">命令行建立数据库表：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、连接数据库："><span class="toc-number">1.1.</span> <span class="toc-text">1、连接数据库：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、检测："><span class="toc-number">1.2.</span> <span class="toc-text">2、检测：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、复制数据库建立的代码："><span class="toc-number">1.3.</span> <span class="toc-text">3、复制数据库建立的代码：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、查看表："><span class="toc-number">1.4.</span> <span class="toc-text">4、查看表：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、注意："><span class="toc-number">1.5.</span> <span class="toc-text">5、注意：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6、在shopMFY的文件夹下建立测试用户test-php，在本地localhost进行查看（可使用WampServer）"><span class="toc-number">1.6.</span> <span class="toc-text">6、在shopMFY的文件夹下建立测试用户test.php，在本地localhost进行查看（可使用WampServer）,</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7、在浏览器中复制Insert及后的内容，粘贴进cmd命令行中。"><span class="toc-number">1.7.</span> <span class="toc-text">7、在浏览器中复制Insert及后的内容，粘贴进cmd命令行中。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8、在命令行输入-select-from-MFY-admin-进行查询。"><span class="toc-number">1.8.</span> <span class="toc-text">8、在命令行输入 select * from MFY_admin;进行查询。</span></a></li></ol></li></ol>
  
   </div>
 
