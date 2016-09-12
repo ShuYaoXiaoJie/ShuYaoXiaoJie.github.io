@@ -1,0 +1,581 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>网页布局基础 | 不停</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="树妖小姐">
+    
+
+    <meta name="keywords" content="html+css">
+    <meta name="description" content="CSS规定的定位机制：1、流动布局（标准文档流）2、浮动布局3、绝对定位布局
+W3C标准：由万维网联盟制定的一系列标准，包括：结构化标准语言（HTML和XML）表现标准语言（CSS）行为标准语言（DOM和ECMAScript）倡导结构、样式、行为分离
+标准文档流特点：从上到下，从左到右，输出文档内容。由块级元素和行级元素组成。
+块级元素：从左到右撑满页面，独占一行。碰触到页面边缘时，会自动换行。常">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网页布局基础">
+<meta property="og:url" content="http://ShuYaoXiaoJie.github.io/2016/09/12/网页布局基础/index.html">
+<meta property="og:site_name" content="不停">
+<meta property="og:description" content="CSS规定的定位机制：1、流动布局（标准文档流）2、浮动布局3、绝对定位布局
+W3C标准：由万维网联盟制定的一系列标准，包括：结构化标准语言（HTML和XML）表现标准语言（CSS）行为标准语言（DOM和ECMAScript）倡导结构、样式、行为分离
+标准文档流特点：从上到下，从左到右，输出文档内容。由块级元素和行级元素组成。
+块级元素：从左到右撑满页面，独占一行。碰触到页面边缘时，会自动换行。常">
+<meta property="og:updated_time" content="2016-09-12T06:36:09.675Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网页布局基础">
+<meta name="twitter:description" content="CSS规定的定位机制：1、流动布局（标准文档流）2、浮动布局3、绝对定位布局
+W3C标准：由万维网联盟制定的一系列标准，包括：结构化标准语言（HTML和XML）表现标准语言（CSS）行为标准语言（DOM和ECMAScript）倡导结构、样式、行为分离
+标准文档流特点：从上到下，从左到右，输出文档内容。由块级元素和行级元素组成。
+块级元素：从左到右撑满页面，独占一行。碰触到页面边缘时，会自动换行。常">
+
+    
+    <link rel="alternative" href="/atom.xml" title="不停" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+          
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="不停" title="不停"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="不停">不停</a></h1>
+				<h2 class="blog-motto">我不等伞，也不等雨停。</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:ShuYaoXiaoJie.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/09/12/网页布局基础/" title="网页布局基础" itemprop="url">网页布局基础</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="树妖小姐" target="_blank" itemprop="author">树妖小姐</a>
+		
+  <p class="article-time">
+    <time datetime="2016-09-12T06:17:43.000Z" itemprop="datePublished"> 发表于 2016-09-12</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS规定的定位机制："><span class="toc-number">1.</span> <span class="toc-text">CSS规定的定位机制：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#W3C标准："><span class="toc-number">2.</span> <span class="toc-text">W3C标准：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#标准文档流"><span class="toc-number">3.</span> <span class="toc-text">标准文档流</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#块级元素："><span class="toc-number">4.</span> <span class="toc-text">块级元素：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#行级元素："><span class="toc-number">5.</span> <span class="toc-text">行级元素：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#盒子模型："><span class="toc-number">6.</span> <span class="toc-text">盒子模型：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#就近原则："><span class="toc-number">7.</span> <span class="toc-text">就近原则：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#盒子3D模型"><span class="toc-number">8.</span> <span class="toc-text">盒子3D模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#浮动布局："><span class="toc-number">9.</span> <span class="toc-text">浮动布局：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#float属性："><span class="toc-number">10.</span> <span class="toc-text">float属性：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#清除浮动的常用方法："><span class="toc-number">11.</span> <span class="toc-text">清除浮动的常用方法：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#绝对定位布局："><span class="toc-number">12.</span> <span class="toc-text">绝对定位布局：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#position属性拥有三种定位形式："><span class="toc-number">13.</span> <span class="toc-text">position属性拥有三种定位形式：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#相对定位特点："><span class="toc-number">14.</span> <span class="toc-text">相对定位特点：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#绝对定位特点："><span class="toc-number">15.</span> <span class="toc-text">绝对定位特点：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#未设置偏移量特点："><span class="toc-number">16.</span> <span class="toc-text">未设置偏移量特点：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#设置偏移量的偏移参照基准："><span class="toc-number">17.</span> <span class="toc-text">设置偏移量的偏移参照基准：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#横向两列布局："><span class="toc-number">18.</span> <span class="toc-text">横向两列布局：</span></a></li></ol>
+		
+		</div>
+		
+		<h1 id="CSS规定的定位机制："><a href="#CSS规定的定位机制：" class="headerlink" title="CSS规定的定位机制："></a>CSS规定的定位机制：</h1><p>1、流动布局（标准文档流）<br>2、浮动布局<br>3、绝对定位布局</p>
+<h1 id="W3C标准："><a href="#W3C标准：" class="headerlink" title="W3C标准："></a>W3C标准：</h1><p>由万维网联盟制定的一系列标准，包括：<br>结构化标准语言（HTML和XML）<br>表现标准语言（CSS）<br>行为标准语言（DOM和ECMAScript）<br>倡导结构、样式、行为分离</p>
+<h1 id="标准文档流"><a href="#标准文档流" class="headerlink" title="标准文档流"></a>标准文档流</h1><p>特点：从上到下，从左到右，输出文档内容。<br>由块级元素和行级元素组成。</p>
+<h1 id="块级元素："><a href="#块级元素：" class="headerlink" title="块级元素："></a>块级元素：</h1><p>从左到右撑满页面，独占一行。碰触到页面边缘时，会自动换行。<br>常见块级元素标签：div,ul,li,dl,dt,p…..</p>
+<h1 id="行级元素："><a href="#行级元素：" class="headerlink" title="行级元素："></a>行级元素：</h1><p>能在同一行内显示， 不会改变html的结构。<br>常见的行级标签：span,strong,img,input..<br>大部分表单元素都是行级标签</p>
+<h1 id="盒子模型："><a href="#盒子模型：" class="headerlink" title="盒子模型："></a>盒子模型：</h1><p>   由内容、属性构成。<br>属性：由边框(border）,外边距(margin),内边距（padding）构成。属性有四个方向  top,left,right,bottom]可以按照上右下左，顺时针方向同时设置。<br>同时设置三个值：分别是top,left&amp;right,bottom.<br>同时设置两个值：分别是top&amp;bottom,lefy&amp;right。<br>同时设置一个值：四个方向均相同。</p>
+<h1 id="就近原则："><a href="#就近原则：" class="headerlink" title="就近原则："></a>就近原则：</h1><p>按照离标签的距离判断优先级，分别是行内样式&gt;内部样式&gt;外部样式</p>
+<h1 id="盒子3D模型"><a href="#盒子3D模型" class="headerlink" title="盒子3D模型"></a>盒子3D模型</h1><p>(从内到外，第一层到第五层）：边框(border)，内边距和盒子中的内容(cantent+padding),<br>背景图像（background-image),背景颜色（background-color）,外边距（margin）.</p>
+<p>#自动居中–列布局<br>  的三个技能点：标准文档流，块级元素，margin属性<br>注意：如果想让页面自动居中，当设置margin属性为auto的时候，不能再设置浮动或绝对定位属性。<br>     自动居中一列布局需要设置 margin 左右值设置为 auto，而且一定要设置width为一个定值。</p>
+<h1 id="浮动布局："><a href="#浮动布局：" class="headerlink" title="浮动布局："></a>浮动布局：</h1><p>  CSS中规定的第二种定位机制，能够实现横向多列布局。</p>
+<h1 id="float属性："><a href="#float属性：" class="headerlink" title="float属性："></a>float属性：</h1><pre><code>三个属性值：左浮动（left）、右浮动（right）、不浮动（none）
+特点：元素会左移，右移，直到触碰容器为止。
+注意：设置了浮动的元素依然处于标准文档流中。
+tips:当元素没有设置宽度值，而设置了浮动属性，元素的宽度随内容变化而变化。
+</code></pre><h1 id="清除浮动的常用方法："><a href="#清除浮动的常用方法：" class="headerlink" title="清除浮动的常用方法："></a>清除浮动的常用方法：</h1><pre><code>clear属性--常用clear:both;clear:left;或者clear:left
+同时设置width:100%(或固定宽度)+overlow:hidden;（移除属性）
+对于段落清楚浮动也可以用&lt;br/&gt;空标签，不过不是最好的方法。
+</code></pre><p>注意：当父包含块缩成一条时，用clear:both方法清除浮动无效，它一般用于紧邻后面的元素的<br>清除浮动。</p>
+<h1 id="绝对定位布局："><a href="#绝对定位布局：" class="headerlink" title="绝对定位布局："></a>绝对定位布局：</h1><p>  通过设置position属性实现，是CSS中规定的第三种定位机制，能够实现横向多列布局及较为复杂的定位。</p>
+<h1 id="position属性拥有三种定位形式："><a href="#position属性拥有三种定位形式：" class="headerlink" title="position属性拥有三种定位形式："></a>position属性拥有三种定位形式：</h1><p>1、静态定位。2、相对定位。3、绝对定位。<br>  可以设置四个属性值：static静态定位）、relative（相对定位）、absolute（绝对定位）、fixed（固定定位）。</p>
+<h1 id="相对定位特点："><a href="#相对定位特点：" class="headerlink" title="相对定位特点："></a>相对定位特点：</h1><p>  相对于自身原有位置进行偏移。仍处于标准文档流中。随即拥有偏移属性和z-index属性。</p>
+<h1 id="绝对定位特点："><a href="#绝对定位特点：" class="headerlink" title="绝对定位特点："></a>绝对定位特点：</h1><p>  建立了以包含块为基准的定位，完全脱离了标准文档流。随即拥有偏移属性和z-index属性。</p>
+<h1 id="未设置偏移量特点："><a href="#未设置偏移量特点：" class="headerlink" title="未设置偏移量特点："></a>未设置偏移量特点：</h1><p>无论是否存在已定位祖先元素，都保持在元素初始位置，并且脱离了标准文档流。</p>
+<h1 id="设置偏移量的偏移参照基准："><a href="#设置偏移量的偏移参照基准：" class="headerlink" title="设置偏移量的偏移参照基准："></a>设置偏移量的偏移参照基准：</h1><p>  设置偏移量的偏移参照基准：无已定位祖先元素，以<html>为偏移参照基准，有已定位的祖先元素，以距其最近的已定位祖先元素为偏移参照基准。</html></p>
+<h1 id="横向两列布局："><a href="#横向两列布局：" class="headerlink" title="横向两列布局："></a>横向两列布局：</h1><pre><code>使用absolute实现横向两列布局，常用于一列固定宽度，另一列宽度自适应的情况。
+主要应用技能：relative--父元素相对定位；absolute--自适应宽度元素绝对定位。
+注意：固定宽度列的高度&gt;自适应宽度列。
+</code></pre>  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/编程/">编程</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/网页布局/">网页布局</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://ShuYaoXiaoJie.github.io/2016/09/12/网页布局基础/" data-title="网页布局基础 | 不停" data-tsina="3737921764" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/08/26/关于首页的制作/"  title="关于首页的制作">
+ <strong>下一篇：</strong><br/> 
+ <span>关于首页的制作
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2016/09/12/网页布局基础/" data-title="网页布局基础" data-url="http://ShuYaoXiaoJie.github.io/2016/09/12/网页布局基础/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS规定的定位机制："><span class="toc-number">1.</span> <span class="toc-text">CSS规定的定位机制：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#W3C标准："><span class="toc-number">2.</span> <span class="toc-text">W3C标准：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#标准文档流"><span class="toc-number">3.</span> <span class="toc-text">标准文档流</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#块级元素："><span class="toc-number">4.</span> <span class="toc-text">块级元素：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#行级元素："><span class="toc-number">5.</span> <span class="toc-text">行级元素：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#盒子模型："><span class="toc-number">6.</span> <span class="toc-text">盒子模型：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#就近原则："><span class="toc-number">7.</span> <span class="toc-text">就近原则：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#盒子3D模型"><span class="toc-number">8.</span> <span class="toc-text">盒子3D模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#浮动布局："><span class="toc-number">9.</span> <span class="toc-text">浮动布局：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#float属性："><span class="toc-number">10.</span> <span class="toc-text">float属性：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#清除浮动的常用方法："><span class="toc-number">11.</span> <span class="toc-text">清除浮动的常用方法：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#绝对定位布局："><span class="toc-number">12.</span> <span class="toc-text">绝对定位布局：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#position属性拥有三种定位形式："><span class="toc-number">13.</span> <span class="toc-text">position属性拥有三种定位形式：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#相对定位特点："><span class="toc-number">14.</span> <span class="toc-text">相对定位特点：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#绝对定位特点："><span class="toc-number">15.</span> <span class="toc-text">绝对定位特点：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#未设置偏移量特点："><span class="toc-number">16.</span> <span class="toc-text">未设置偏移量特点：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#设置偏移量的偏移参照基准："><span class="toc-number">17.</span> <span class="toc-text">设置偏移量的偏移参照基准：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#横向两列布局："><span class="toc-number">18.</span> <span class="toc-text">横向两列布局：</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/学习/" title="学习">学习<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/旅途/" title="旅途">旅途<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/生活/" title="生活">生活<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/编程/" title="编程">编程<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/随想/" title="随想">随想<sup>3</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/shopMFY/" title="shopMFY">shopMFY<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/环境配置/" title="环境配置">环境配置<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/电影/" title="电影">电影<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/快捷键/" title="快捷键">快捷键<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/github/" title="github">github<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/总结/" title="总结,">总结,<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/网页设计/" title="网页设计">网页设计<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/书籍/" title="书籍">书籍<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/动漫/" title="动漫">动漫<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/美食/" title="美食">美食<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/网页布局/" title="网页布局">网页布局<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://www.chinaso.com/" target="_blank" title="中国搜索">中国搜索</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="weiboshow">
+  <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=3737921764&verifier=86c1c81c&dpc=1"></iframe>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 一生努力，一生被爱 <br/>
+			</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/3737921764 for http://weibo.com/3737921764" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="http://www.zhihu.com/people/树妖小姐 for https://www.zhihu.com/people/shu-yao-xiao-jie" target="_blank" class="icon-zhihu" title="知乎"></a>
+		
+		
+		
+		<a href="mailto:419626329@qq.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="树妖小姐">树妖小姐</a>
+		
+		
+		</p>
+
+
+    <script type="text/javascript">  
+    var duoshuoQuery = {short_name:"buting"};  
+            (function() {  
+                    var ds = document.createElement('script');  
+                    ds.type = 'text/javascript';ds.async = true;  
+                    ds.src = 'http://static.duoshuo.com/embed.js';  
+                    ds.charset = 'UTF-8';  
+                    (document.getElementsByTagName('head')[0]  
+                    || document.getElementsByTagName('body')[0]).appendChild(ds);  
+            })();  
+    </script>  
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+        getSize();
+        if (myWidth >= 1024) {
+          c.click();
+        }
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"buting"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
